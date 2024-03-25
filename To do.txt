@@ -1,0 +1,22 @@
+To do:
+
+- Adding email to register  x
+- Reset password using email and token  x
+- When registering, we should check that there is no a user uses the national ID ---
+- Manage users, teachers and students from the admins
+- Limit inputs (30 username max, 50 password max)
+- Determine the allowed national IDs to register (allowedAdmins, allowedUsers, ...)  ---
+
+- The icons in front when register and login to check the validation of the user inputs
+- Validation and sanitization of the user inputs in the front before going to the server
+
+Icons in register
+
+One number
+One symbol
+One lowercase letter
+One uppercase letter
+Use 8-50 characters
+Only Latin letters
+
+Icon in password match

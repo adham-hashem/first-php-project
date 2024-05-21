@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
 
 // =================
 
-
+// prepared statement
 $sql = "SELECT arabic, english, mathematics, chemistry, physics FROM degrees
 WHERE student_national_id=?;";
 

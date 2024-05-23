@@ -116,9 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nationalIDErr = "This National ID is not allowed!";
         }
 
-
         include("config/config.php");
-
 
         // Vertifing that national ID is not attached to another account
         $sql = "SELECT id FROM " .
@@ -137,7 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($result->num_rows > 0) {
             $nationalIDErr = "This National ID is attached to another account";
         }
-
 
 
         if ($nationalIDErr === "" && $usernameErr === "" && $passwordErr === "" && $confirmPasswordErr === "") {

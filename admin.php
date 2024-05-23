@@ -175,8 +175,8 @@ if ($result->num_rows > 0) {
                         <h2><?php echo $username; ?></h2>
                     </div>
                     <div class="col-6">
-                        <div class="profile_image d-flex justify-content-center">
-                                <?php
+                        <div class="profile_image">
+                            <?php
                                 
                                 if ($user_profile_image === "") {
                                     echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" enctype="multipart/form-data">
@@ -191,19 +191,19 @@ if ($result->num_rows > 0) {
                                 
                                     echo '<img src="' . $user_profile_image . '" alt="profile photo" />';
                                     echo "<br>";
-                                    // echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" enctype="multipart/form-data">
-                                    //             <div class="form-group">
-                                    //             <label for="profilePhoto">Select profile Photo:</label>
-                                    //             <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" />
-                                    //             </div>
-                                    //             <input type="submit" value="Upload" name="uploadProfilePhoto" />
-                                    //         </form>';
+                                    echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                <label for="profilePhoto">Select profile Photo:</label>
+                                                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" />
+                                                </div>
+                                                <input type="submit" value="Upload" name="uploadProfilePhoto" />
+                                            </form>';
                                 }
-                                
+                                    
                                 ?>
 
 
-                            <!-- <a class="btn btn-primary" href="uploadProfileImage.php">Change Photo</a> -->
+                                <!-- <a class="btn btn-primary" href="uploadProfileImage.php">Change Photo</a> -->
                         </div>
                     </div>
                 </div>

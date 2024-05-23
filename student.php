@@ -42,6 +42,8 @@ $stmt->bind_param("s", $nationalID);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$arabicDegree = $englishDegree = $mathematicsDegree = $chemistryDegree = $physicsDegree = '';
+
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
@@ -50,8 +52,6 @@ if ($result->num_rows > 0) {
     $mathematicsDegree = $row['mathematics'];
     $chemistryDegree = $row['chemistry'];
     $physicsDegree = $row['physics'];
-} else {
-    echo "Error in getting degrees: " . $conn->error;
 }
 
 // =================
@@ -163,7 +163,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Profile Photo
-
 function uploadFile($file, $uploadDirectory, $allowedTypes, $maxFileSize) {
     $filename = $file["name"];
     $tmpFilePath = $file["tmp_name"];
@@ -251,7 +250,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profilePhoto'])) {
 
 
 // Getting profile photo if the user has
-
 $sql = "SELECT profile_image FROM " .
 (($type === "Admin") ? "admins" :
 (($type === "User") ? "users" :
@@ -273,7 +271,7 @@ if ($result->num_rows > 0) {
     $user_profile_image = $row['profile_image'];
 }
 
-echo "user profile image: " . $user_profile_image;
+// echo "user profile image: " . $user_profile_image;
 
 
 
